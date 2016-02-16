@@ -1,0 +1,402 @@
+/*** PAGE DISPLAY ***/
+* {
+  box-sizing: border-box;
+}
+
+html {
+   min-height: 100%;
+}
+
+body {
+  /*background-image: url(../background.jpg);*/
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  max-width: 95%;
+  margin: 0 auto;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: capitalize;
+  overflow: hidden;
+}
+
+/*** LANDING DISPLAY ***/
+.landing {
+  border: 8px solid white;
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.2);;
+  display: inherit;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+input {
+  border: 0;
+  border-bottom: 4px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 20%;
+  width: 60%;
+  line-height: 1em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+input#player2-name {
+  margin-top: 10%;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.landing-buttons {
+  border: 4px solid white;
+  border-radius: 50%;
+  height: 100px;
+  max-width: 100px;
+  background-color: transparent;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 10%;
+  font-size: 1.2em;
+  width: 33.3333333%;
+  padding: 3%;
+}
+
+.landing-buttons:hover {
+  border: 4px solid white;
+  border-radius: 50%;
+  height: 100px;
+  max-width: 100px;
+  background-color: white;
+  color: rgb(255, 82, 118);
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 10%;
+  font-size: 1.2em;
+  width: 33.3333333%;
+  padding: 3%;
+}
+
+.submit {
+  margin-right: 18%;
+}
+
+
+/*** HEADER DISPLAY ***/
+header {
+  border: 1px solid transparent;
+  width: 423px;
+  position: fixed;
+  margin: 0 0 0 -211.5px;
+  top: 5%;
+  left: 50%;
+  font-size: 1.5em;
+  line-height: 1.8em;
+}
+
+.header {
+  float: left;
+}
+
+.header-buttons {
+  width: 10%;
+  height: 42px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.header-buttons:hover {
+  width: 10%;
+  height: 42px;
+  border: 2px solid white;
+  background-color: white;
+  color: white;
+  border-radius: 50%;
+  animation-name: colorChangeBG;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.display {
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 1.6em;
+}
+
+.fa-bomb {
+  text-align: center;
+  margin-top: 6px;
+  margin-right: 1px;
+  vertical-align: top;
+}
+
+.fa-undo {
+  text-align: center;
+  margin-top: 7px;
+  margin-left: 2px;
+  vertical-align: top;
+}
+
+
+/*** MAIN DISPLAY ***/
+main {
+  display: none;
+}
+
+.game-board {
+  border: 1px solid transparent;
+  position: fixed;
+  width: 423px;
+  height: 423px;
+  top: 50%;
+  left: 50%;
+  margin: -211.5px 0 0 -211.5px;
+  animation: zoomBoard 1s linear 0s 1;
+}
+
+button.box {
+  float: left;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: rgb(255, 82, 118);
+  font-size: 7em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.box {
+  width: 33.33333%;
+  height: 140px;
+}
+
+.top.left {
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.top.center {
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.top.right {
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.middle.left {
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  border-right: 2px solid white
+}
+
+.middle.center {
+  border: 2px solid white;
+}
+
+.middle.right {
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  border-left: 2px solid white
+}
+
+.bottom.left {
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.bottom.center {
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.bottom.right {
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+
+/*** NOTIFICATIONS DISPLAY ***/
+.notifications {
+  border: 1px solid transparent;
+  width: 423px;
+  font-size: 1.2em;
+  position: fixed;
+  margin: 0 0 0 -211.5px;
+  bottom: 2%;
+  left: 50%;
+  line-height: 1.8em;
+}
+
+.players, .tie {
+  float: left;
+}
+
+.players {
+  width: 32.5%;
+}
+
+.tie {
+  width: 35%;
+}
+
+.scores {
+  font-size: 1.8em;
+  color: rgb(255, 82, 118);
+  font-weight: bold;
+}
+
+
+/*** GAME OVER DISPLAY ***/
+.game-over {
+  border: 8px solid white;
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.2);;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.thanks-message {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 20%;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.winner-message {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 5%;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.crazy-button {
+  border: 4px solid white;
+  border-radius: 50%;
+  height: 180px;
+  max-width: 180px;
+  background-color: transparent;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 5%;
+  font-size: 1.8em;
+  padding: 3%;
+  animation-name: crazySpin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.crazy-button:hover {
+  border: 4px solid white;
+  border-radius: 50%;
+  height: 180px;
+  max-width: 180px;
+  background-color: white;
+  color: rgb(255, 82, 118);
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 5%;
+  font-size: 1.8em;
+  padding: 3%;
+  font-weight: 600;
+  animation: crazySpin 2s linear 0s infinite;
+}
+
+
+/*** FOOTER DISPLAY ***/
+footer {
+  position: fixed;
+  bottom: 2%;
+  right: 40%;
+  left: 40%;
+  font-size: 9px;
+  text-align: center;
+  vertical-align: bottom;
+  text-transform: none;
+}
+
+/*** ANIMATIONS ***/
+@keyframes zoomBoard {
+  from {transform: scale(0.3);}
+}
+
+@keyframes zoomBoardReverse {
+  from {transform: scale(1);}
+  to {transform: scale(0.3)}
+}
+
+@keyframes crazySpin {
+  from {transform: rotate(0deg);}
+   to {transform: rotate(360deg);}
+}
+
+@keyframes crazySpinReverse {
+  from {transform: rotate(0deg);}
+   to {transform: rotate(-360deg);}
+}
+
+@keyframes colorChangeBG {
+  0%  {background-color: rgb(255, 84, 104);}
+  15%  {background-color: rgb(212, 120, 165);}
+  35%  {background-color: rgb(130, 63, 120);}
+  55%  {background-color: rgb(83, 208, 200);}
+  75%  {background-color: rgb(34, 147, 184);}
+  90%  {background-color: rgb(123, 196, 182);}
+  100% {background-color: rgb(255, 84, 104);}
+}
+
+/*.landing:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}*/
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-6px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(6px, 0, 0);
+  }
+}

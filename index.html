@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:700,400' rel='stylesheet' type='text/css'>
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+
+  <div class="landing">
+    <div class="landing-box">
+      <input type="text" class="name-input" id="player1-name" maxlength="10" placeholder="Player 1"> <br>
+      <input type="text" class="name-input" id="player2-name" maxlength="10" placeholder="Player 2"> <br>
+      <button class="landing-buttons submit">Submit</button>
+      <button class="landing-buttons skip">Skip</button>
+    </div>
+  </div>
+
+  <main>
+    <header>
+      <div class="header header-buttons" id="reset">
+        <i class="fa fa-undo"></i>
+      </div>
+      <div class="header display">
+        <div class="display-message">Let's play!</div>
+      </div>
+      <div class="header header-buttons" id="exit">
+        <i class="fa fa-bomb"></i>
+      </div>
+    </header>
+
+    <div class="game-board">
+      <div class="grid">
+        <button class="box top left" data-index="0"></button>
+        <button class="box top center" data-index="1"></button>
+        <button class="box top right" data-index="2"></button>
+        <button class="box middle left" data-index="3"></button>
+        <button class="box middle center" data-index="4"></button>
+        <button class="box middle right" data-index="5"></button>
+        <button class="box bottom left" data-index="6"></button>
+        <button class="box bottom center" data-index="7"></button>
+        <button class="box bottom right" data-index="8"></button>
+      </div>
+    </div>
+
+    <div class="notifications">
+      <div class="players player1"><span id="p1Name">Player 1</span>
+        <div class="player1-score scores">0</div>
+      </div>
+
+      <div class="tie">Tie
+        <div class="tie-score scores">0</div>
+      </div>
+
+      <div class="players player2"><span id="p2Name">Player 2</span>
+        <div class="player2-score scores">0</div>
+      </div>
+    </div>
+  </main>
+
+  <div class="game-over">
+    <div class="exit-box">
+      <div class="thanks-message">Thanks for playing!</div>
+      <button class="crazy-button replay">Feeling crazy?</button>
+      <div class="winner-message"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; Jennifer Kahn, 2016 </div>
+  </footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
